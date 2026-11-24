@@ -20,11 +20,6 @@ export function useTaskData({ api, filters }) {
   const tasks = snapshot.tasks;
   const isLoading = status === 'loading';
 
-  // ВРЕМЕННО для скриншота КР3: сначала «true 0», затем «false N». Удалить после скриншота.
-  useEffect(() => {
-    console.log(isLoading, tasks.length);
-  }, [isLoading, tasks.length]);
-
   // Признак монтирования восстанавливается в setup — важно для повторного цикла StrictMode.
   useEffect(() => {
     mountedRef.current = true;
